@@ -11,18 +11,21 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
-<!--    create a loop for each job in "jobs" from controller-->
-<!--    //each job ob field and value  should display - get vars from ListController-->
 
-    <th:block th:each="job : ${jobs}">
         <table class="job-listing">
-            <tr>
-                <td>Field</td>
-                <td>Value</td>
-            </tr>
+            <tbody>
+                <tr th:each="job : ${jobs}">
+                    <td>
+                        <p th:text="'ID: ' + ${job.id}">ID Here</p>
+                        <p th:text="'Name: ' + ${job.name}">Name Here</p>
+                        <p th:text="'Employer: ' + ${job.employer}">Employer Here</p>
+                        <p th:text="'Location: ' + ${job.location}">Location Here</p>
+                        <p th:text="'Position Type: ' + ${job.positionType}">Position Type Here</p>
+                        <p th:text="'Skill: ' + ${job.coreCompetency}">Skill (coreCompetency) Here</p>
+                    </td>
+                </tr>
+            </tbody>
         </table>
-    </th:block>
-
 
 </div>
 
